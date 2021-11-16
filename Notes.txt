@@ -1,0 +1,7 @@
+Terraform destroy command destroys everything in the infrastructure. This command is not recommended in prod environment.
+VPC - Virtual Private Cloud  
+Amazon Virtual Private Cloud (VPC) gives you complete control over your virtual networking environment, 
+including resource placement, connectivity, and security. The first step is to create your VPC. 
+Then you can add resources to it, such as Amazon Elastic Compute Cloud (EC2) and 
+Amazon Relational Database Service (RDS) instances. Finally, you can define how your VPCs communicate with each other 
+across accounts, Availability Zones (AZs), or Regions.
