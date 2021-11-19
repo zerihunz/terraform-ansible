@@ -43,4 +43,27 @@
     10.0.0.2: Reserved by AWS. The IP address of the DNS server is always the base of the VPC network range plus two; however, we also reserve the base of each subnet range plus two. For VPCs with multiple CIDR blocks, the IP address of the DNS server is located in the primary CIDR. For more information, see Amazon DNS Server.
     10.0.0.3: Reserved by AWS for future use.
     10.0.0.255: Network broadcast address. We do not support broadcast in a VPC, therefore we reserve this address.  
-    
+
+
+-To destroy terrafrom so that you won't be billed:    terraform destroy --auto-approve
+
+-The command "terraform state list" lists all of the resources that we have created a state for.
+
+-And to see more about the items listed do this command: "terraform state show aws_eip.one"
+
+-terraform refresh would show ouput blocks without applying or potentially modifying anything.
+
+-"terraform destroy -target aws_instance.web-server-instance"  //destroys only the webserver
+
+-"terraform apply -target aws_instance.web-server-instance"  //applys only the webserver
+
+- a variable can be passed after "terraform apply" or
+
+- a variable can also be passed from the command line like: "terraform apply -var "subnet_prefix=10.0.100.0/24"
+
+- best way to use is to use a separate file for variable assignment
+
+- If nothing is provided provided, terraform can use a default, which is specified under the variable declaration block
+
+- It is also possible to use objects in terraform.tfvars file:
+    subnet_prefix = [{ cidr_block = "10.0.1.0/24", name = "prod_subnet" }, { cidr_block = "10.0.2.0/24", name = "dev_subnet" }]
