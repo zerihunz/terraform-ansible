@@ -1,8 +1,7 @@
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
-  access_key = "AKIAV3EUPNTH26URKMWB"
-  secret_key = "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"
+ 
 }
 
 #resource "aws_instance" "foobarweb" {
