@@ -30,3 +30,65 @@ Ansible supports these Operating systems
     -  Linux, including: RHEL, CentOS, Fedora, ubuntu, and others
     -  Windows and Windows Server, UNIX, OSX, IBM z/OS, NGINX
     -  IBM Power Systems      
+
+
+
+//To show Linux operating system names
+cat /etc/os-release
+lsb_release -a
+hostnamectl
+Type the following command to find Linux kernel version:
+uname -r
+
+
+To add key to ssh agent in linux, do the following:
+
+ ssh-agent bash
+ cp ec2-key.pem ~/.ssh/
+ sudo cp ec2-key.pem ~/.ssh/
+ ssh-add ~/.ssh/ec2-key.pem
+
+ ansible ansible-target-1 -m ping -i inventory.txt
+
+ To Avoid host key checking on every run of the above command, run the following command
+
+ export ANSIBLE_HOST_KEY_CHECKING=False
+
+ or
+
+ edit the file: /etc/ansible/ansible.cfg and uncomment "host_key_checking = false" line
+
+ instead of specifying "ansible-target-1" in the above command, you can specify a tag, [servers] at the top
+ and name servers to ping both servers.
+
+ https://www.json2yaml.com/
+ <- yaml supports comments, json does not
+# did you know you can embed json in yaml?
+
+
+ {
+   "raw_materials":[
+     "Coffee",
+     "Flavour Liquid",
+     "Milk",
+     "Water",
+     "Sugar"
+   ]
+ }
+
+ YAML multiline strings:
+ - Use > most of the time: interior line breaks are stripped out, although you get one at the end:
+ - Use | if you want those linebreaks to be preserved as \n (for instance, embedded markdown with paragraphs).
+
+ comments in YAML are precedded with #
+
+ expressions in YAML:   file_path: "{variable}"
+
+Ansible Module
+- modules (also known as "task plugins" or "library plugin") are discrete units of code that can be used from the command line or in a playbook task
+- Ansible executes each module on the remote target node, collects returned values
+
+ansible <pattern_goes_here> -m <module_name> -a <arguments>
+ansible webservers -m service -a "name=httpd state=restarted"
+
+-A pattern is a set of groups (sets of hosts) - in the above case machines in the "webservers" group
