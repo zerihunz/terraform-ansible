@@ -1,0 +1,32 @@
+- pip3 install ansible   //use python3, hence pip3, python 2 is depreciated by now.
+- ansible is owned by redhat
+- Ansible is agentless - meaning that all connections are done over the standard remote-access services that you already have configuration for. 
+                         Ansible can start managing remote machines immediately, without any agent software installed.
+
+- By operating in an agentless manner over SSH and WinRM, Ansible avoids this problem -- 
+
+- Ansible is Free
+
+- AnsibleTower is paid version
+
+- Ansible is a push model
+
+- Ansible is a simple IT Automation engine that automates cloud provisioning, configuration management, application deployment, intra-service orchestration,
+  and many other IT needs.
+
+- Ansible is made with Python, shell script and Ruby
+
+Ansible can manage Physical devices:
+    - Bare metal servers - cobbler, stacki and red hat satellite
+    - Network devices - Cisco, Juniper, Arista.
+    - Storage devices - NetApp, Infinidat, Pure Storage, IBM Storage, Dell EMC, HPE OneView
+    - Servers - HP Enterprise
+Ansible supports all leading virtualization platforms:
+    - VMWare
+    - Red hat virtualization (RHV)
+    - Xenserver
+    - Vagrant
+Ansible supports these Operating systems
+    -  Linux, including: RHEL, CentOS, Fedora, ubuntu, and others
+    -  Windows and Windows Server, UNIX, OSX, IBM z/OS, NGINX
+    -  IBM Power Systems      
