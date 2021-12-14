@@ -1,0 +1,16 @@
+ARM - Azure Resource manager
+
+Create the resource group with Azure CLI
+
+az group create --name myResourceGroup --location "East US"
+
+To deploy the template, use either Azure CLI or Azure PowerShell. Use the resource group you created. 
+Give a name to the deployment so you can easily identify it in the deployment history.  
+
+az deployment group create --name blanktemplate --resource-group armResourceGroup --template-file .\azuredeploy.json
+
+Next Add a storage account to the resource group
+
+armResourceGroup
+
+The storage account name must be unique across Azure. The name must have only lowercase letters or numbers. It can be no longer than 24 characters. You might try a naming pattern like using store1 as a prefix and then adding your initials and today's date. For example, the name you use could look like store1abc09092019.
