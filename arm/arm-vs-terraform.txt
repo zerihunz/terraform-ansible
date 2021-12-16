@@ -1,0 +1,40 @@
+
+https://dinarys.com/blog/azure-resource-manager-arm-shablony-vs-terraform
+Azure Resource Manager (ARM) Templates vs Terraform
+
+- Both of the toolings are designed to resolve similar problems
+- One of the main advantages of Terraform is its language uniformity, allowing it to work with Azure, AWS, GCE, OpenStack, and local deployments 
+  on a single hardware.
+
+- ARM Templates use JSON, which is more difficult for reading and does not support comments. 
+  You can put the variables in a separate document and refer to them in the main configuration file. 
+  However, ARM's notation is quite powerful — it supports conditional expressions, nested templates, etc.  
+
+- Terraform mainly focuses on deploying the cloud platform from scratch. The task of placing software boxes 
+  is solved by third-party utilities. Parameters are written into declaration files which can be modified like 
+  any other code. On the other hand, Terraform doesn't distinguish between parameters and variables, which can be a pain in some cases. 
+
+- With an ARM, the server gets a unique configuration and update history. This causes "configuration drift" and potential vulnerability. 
+  Whereas with Terraform, modification of the component leads to the emergence of a separate state through removal and building a new 
+  configuration of the system. Updating is swift and error-free. Reversing to the previous configuration is as simple as selecting 
+  a new one from the list, pretty straightforward.
+
+- ARM has Unlimited library of templates, built-in utilities that allow you to write complex, yet easy-to-read code, 
+  provide certain advantages to both experienced and new clients. The use of procedural code requires remembering system events. 
+  Whereas in Terraform, it is enough to specify to the utility what changes are required, which makes it possible to manage a compact 
+  and simple library with little effort. On the other hand, Terraform does not distinguish between parameters and variables, as 
+  ARM Templates can.  
+
+- In Terraform, you can launch and disable resources at any time using the Terraform Destroy feature. In the ARM Template, 
+  the only way to do this is to delete the entire resource structure, which is not very handy.
+
+- Terraform allows you to create elements that are not available in ARM templates such as resource groups, for example. 
+  In ARM, a resource group can be created through a command for running a template, and not as a part of one of the templates. 
+
+- In addition, Terraform can create storage containers, queues, tables, and file shares, which is not possible in an ARM template.  
+
+- In ARM the deployment is done automatically without user interference. When deployed, Terraform creates a state file — terraform.tfstate, 
+  which is used to store the state of the infrastructure separately from the infrastructure itself. 
+  This way, you can manage a separate file rather than making changes to the entire infrastructure.
+
+  
